@@ -15,5 +15,5 @@ def new_sighting:
 
 def stats: 
     return HttpResponse("Here are some stats.") 
-
+  
 # Create your views here.
