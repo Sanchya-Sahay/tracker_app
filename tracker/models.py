@@ -2,17 +2,13 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
-    x = models.DecimalField(
-             blank=True,
-             max_digits=21,
-             decimal_places=21,
-             null=True,
-             )
-    y = models.DecimalField(
+    x = models.CharField(
             blank=True,
-            max_digits=21,
-            decimal_places=21,
-            null=True,
+            max_length=21,
+             )
+    y = models.CharField(
+            blank=True,
+            max_length=21,
             )
     unique_squirrel_id = models.CharField(
            primary_key=True,
@@ -111,7 +107,7 @@ class Squirrel(models.Model):
             null=True,
             )
 
-    other_acivities = models.CharField(
+    other_activities = models.CharField(
             blank=True,
             max_length=255,
             )

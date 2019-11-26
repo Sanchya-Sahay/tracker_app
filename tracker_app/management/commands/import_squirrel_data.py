@@ -12,6 +12,7 @@ class Command(BaseCommand):
         path = kwargs['path']
         with open(path, 'rt') as f:
             reader = csv.reader(f, dialect='excel')
+            next(reader,None)
             for row in reader:
                 squirrel = Squirrel.objects.create(
                     x=row[0]
