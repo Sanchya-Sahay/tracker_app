@@ -7,13 +7,13 @@ def sightings(requests):
 def map(requests):
     return HttpResponse("The squirrel map will go here")
 
-def sighting_update(requests)
+def sighting_update(requests):
     return HttpResponse ("Hi, I'm squirrel.}")
 
-def new_sighting:
+def new_sighting(requests):
     return HttpResponse("Here's where we'll add a sighting!")
 
-def stats: 
+def stats(requests): 
     return HttpResponse("Here are some stats.") 
   
 # Create your views here.
