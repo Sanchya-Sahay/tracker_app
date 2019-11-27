@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<h1>Squirrel Sightings</h1>
+	</head>
+
+	<body>
+		<h3><a href = '/sightings/add/'>Add a New Sighting</a></h3>
+		<h3>To update an existing squirrel, click on its id below:</h3>
+		<ul>
+			{% for s in squirrels %}
+			<li> <a href = '/sightings/{{s.unique_squirrel_id}}/'>{{s.unique_squirrel_id}}</a></li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>
+
