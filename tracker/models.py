@@ -2,13 +2,11 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
-    x = models.CharField(
-            blank=True,
-            max_length=21,
+    x = models.FloatField(
+            null=True,
              )
-    y = models.CharField(
-            blank=True,
-            max_length=21,
+    y = models.FloatField(
+            null=True,
             )
     unique_squirrel_id = models.CharField(
            primary_key=True,
