@@ -1,0 +1,16 @@
+What is it? 
+ An application to keep track of all the known squirrels in Central Park. 
+
+Main Features: 
+ - Importing CSV of squirrel sighting data
+ - Add a squirrel sighting
+ - Update or delete an existing squirrel sighting
+ - View map of existing squirrel sightings
+ - Look at overview stats of the entire squirrel population
+ - Export CSV of squirrel data
+
+Group Name & Section:
+	Group 64 ,Section 1
+
+Group Members: 
+	UNIS: [nk2860, ss5901]
