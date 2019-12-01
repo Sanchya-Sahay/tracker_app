@@ -4,8 +4,8 @@ from .models import Squirrel
 from django import forms
 
 class SightingForm(forms.Form):
-    x = forms.CharField(label='X Coordinate', max_length=100, required=False)
-    y = forms.CharField(label='Y Coordinate', max_length=100, required=False)
+    x = forms.FloatField(label='X Coordinate',  required=False)
+    y = forms.FloatField(label='Y Coordinate',  required=False)
     unique_squirrel_id = forms.CharField(label='Unique Squirrel ID', max_length=100 , required=False)
     shift=forms.ChoiceField(label='Shift', choices=Squirrel.SHIFT_CHOICES, required=False)
     date= forms.IntegerField(label='Date', required=False)
