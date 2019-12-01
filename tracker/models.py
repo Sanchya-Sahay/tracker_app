@@ -14,36 +14,28 @@ class Squirrel(models.Model):
            primary_key=True,
            max_length=15,
            )
-    hectare = models.CharField(
-            blank=True,
-            max_length=3,
-            )
-    AM = 'am'
-    PM = 'pm'
+    AM = 'AM'
+    PM = 'PM'
 
     SHIFT_CHOICES = (
-            (AM, 'am'),
-            (PM, 'pm'),
+            (AM, 'AM'),
+            (PM, 'PM'),
             )
     shift = models.CharField(
             choices = SHIFT_CHOICES,
             blank=True,
             max_length=2,
             )
-    date = models.CharField(
-            blank=True,
-            max_length=8,
+    date = models.IntegerField(
+            null=True, blank=True,
             )
-    hectare_squirrel_number = models.IntegerField(
-            blank=True,
-            null=True,
-            )
-    ADULT = 'adult'
-    JUVENILE = 'juvenile'
+
+    ADULT = 'Adult'
+    JUVENILE = 'Juvenile'
 
     AGE_CHOICES = (
-            (ADULT, 'adult'),
-            (JUVENILE, 'juvenile'),
+            (ADULT, 'Adult'),
+            (JUVENILE, 'Juvenile'),
             )
 
     age = models.CharField(
@@ -52,15 +44,15 @@ class Squirrel(models.Model):
             max_length=10,
             )
 
-    GRAY = 'gray'
-    CINNAMON = 'cinnamon'
-    BLACK  ='black'
+    GRAY = 'Gray'
+    CINNAMON = 'Cinnamon'
+    BLACK  ='Black'
 
     FUR_CHOICES = (
-            (GRAY,'gray'),
-            (CINNAMON, 'cinnamon'),
-            (BLACK, 'black'),
-            )
+        (GRAY, 'Gray'),
+        (CINNAMON, 'Cinnamon'),
+        (BLACK, 'Black'),
+    )
 
     primary_fur_color = models.CharField(
             choices = FUR_CHOICES,
@@ -68,12 +60,12 @@ class Squirrel(models.Model):
             max_length=10,
             )
 
-    GROUND_PLANE = 'ground plane'
-    ABOVE_GROUND = 'above ground'
+    GROUND_PLANE = 'Ground Plane'
+    ABOVE_GROUND = 'Above Ground'
 
     LOCATION_CHOICES =(
-            (GROUND_PLANE, 'ground plane'),
-            (ABOVE_GROUND, 'above ground')
+            (GROUND_PLANE, 'Ground Plane'),
+            (ABOVE_GROUND, 'Above Ground')
             )
 
     location = models.CharField(
@@ -88,24 +80,19 @@ class Squirrel(models.Model):
             )
 
     running = models.BooleanField(
-            null=True,
-            )
-   
+            default=False)
+
     chasing = models.BooleanField(
-            null=True,
-            )
-    
+            default=False)
+
     climbing = models.BooleanField(
-            null=True,
-            )
+            default=False)
 
     eating = models.BooleanField(
-            null=True,
-            )
+            default=False)    
 
     foraging = models.BooleanField(
-            null=True,
-            )
+            default=False) 
 
     other_activities = models.CharField(
             blank=True,
@@ -113,34 +100,34 @@ class Squirrel(models.Model):
             )
 
     kuks = models.BooleanField(
-            null=True,
-            )
+            default=False) 
 
     quaas = models.BooleanField(
-            null=True,
-            )
+            default=False)
+            
 
     moans = models.BooleanField(
-            null=True,
-            )
+            default=False)
+        
     
     tail_flags = models.BooleanField(
-            null=True,
-            )
+            default=False)
+        
     
     tail_twitches = models.BooleanField(
-            null=True,
-            )
+            default=False)
+            
 
     approaches = models.BooleanField(
-            null=True,
-            )
+           default=False) 
+        
 
     indifferent = models.BooleanField(
-            null=True,
-            )
+            default=False) 
+            
 
     runs_from = models.BooleanField(
-            null=True,
-            )
-# Create your models here.
+            default=False)
+            
+    def __str__(self):
+        return self.unique_squirrel_id

@@ -1,0 +1,14 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <h1>Add Sighting</h1>
+    <form action="/sightings/add/" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
+
