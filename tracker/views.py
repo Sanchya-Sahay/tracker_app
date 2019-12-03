@@ -102,6 +102,16 @@ def sighting_update(request, unique_squirrel_id):
     }
     return render(request, 'tracker/edit.html', context)
 
+def sighting_delete(request, unique_squirrel_id):
+    squirrel = Squirrel.objects.get(unique_squirrel_id=unique_squirrel_id)
+    if request.method == 'POST':
+        form = SightingForm(request.POST)
+        if not form.is_valid():
+            return HttpResponse("Invalid form response")
+        squirrel.delete()
+
+    return redirect('/sightings/')
+
 def map(request):
     sightings = Squirrel.objects.all()[:50]
     context = {'sightings':sightings,
@@ -146,6 +156,7 @@ def new_sighting(request):
         'form': SightingForm()
     }
     return render(request, 'tracker/new.html', context)
+
 
 def stats(request): 
     eating_counts = 0
