@@ -3,10 +3,12 @@ from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
     x = models.FloatField(
+            blank =True,
             null=True,
              )
     y = models.FloatField(
-            null=True,
+            blank =True,
+            null = True,
             )
     unique_squirrel_id = models.CharField(
            primary_key=True,
